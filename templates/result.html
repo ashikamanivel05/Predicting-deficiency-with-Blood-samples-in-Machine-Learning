@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('../templates/photos/back1.png'); /* Update the path if necessary */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #4B0082;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4B0082;
+            color: white;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FF6500;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .buttons a.logout {
+            background-color: #f44336;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style> -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Example Image">
+        </div>
+        <ul>
+            <li><a href="{{url_for('login')}}">Home</a></li>
+            <li><a href="../templates/about.html">About</a></li>
+            <li><a href="../templates/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Disease Diagnosis</h1>
+        <h2>{{ disease }}</h2>
+        <p><strong>Description:</strong> {{ description }}</p>
+        <p><strong>Causes:</strong> {{ causes }}</p>
+        <p><strong>Symptoms:</strong> {{ symptoms }}</p>
+        <p><strong>Advice:</strong> {{ advice }}</p>
+
+        <h3>Suggested Doctors in {{ location }}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Hospital Name</th>
+                    <th>Main Location</th>
+                    <th>Available Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in doctors %}
+                <tr>
+                    <td>{{ doctor['Doctor Name'] }}</td>
+                    <td>{{ doctor['Hospital name'] }}</td>
+                    <td>{{ doctor['main location'] }}</td>
+                    <td>{{ doctor['Avilable time'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <a href="/home">Check Another Symptom</a>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Multi-Disease Prediction. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Multi-Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image:url(../templates/photos/back1.png); /* Using the same background image from home page */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo img {
+            height: 50px; /* Logo height */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #4B0082;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4B0082;
+            color: white;
+        }
+
+        /* Main Content */
+        .contact-container {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-container h1 {
+            font-size: 3rem;
+            color: #FF6500;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form label {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+            display: block;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style> -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Example Image">
+        </div>
+        <ul>
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="../templates/about.html">About</a></li>
+            <li><a href="../templates/login.html">Services</a></li>
+            <li><a href="../templates/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content: Contact Form -->
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" required placeholder="Enter your place">
+
+                <label for="message">Message/Suggestions</label>
+                <textarea id="message" name="message" required placeholder="Enter your message or suggestion"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Multi-Disease Prediction. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+    <!-- <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url(../templates/photos/back1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #4B0082;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4B0082;
+            color: white;
+        }
+
+        /* Form Section */
+        .form-container {
+            background-color: #617ca6;
+            padding: 40px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .form-container h1 {
+            color: #00ff08;
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #06fe0e;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Example Image">
+        </div>
+        <ul>
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="../templates/about.html">About</a></li>
+            <li><a href="../templates/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h1>Enter Your Symptoms</h1>
+        <form action="{{ url_for('symptom_input')}}" method="post">
+            <label>Name:</label>
+            <input type="text" name="Name" required>
+            <label for="location">Select Location:</label>
+            <select name="location" id="location" style="width: 105%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 15px;">
+            <option value=""></option>
+            <option value="Chennai">Chennai</option>
+            <option value="Coimbatore">Coimbatore</option>
+            </select>
+            <label>Glucose:</label>
+            <input type="text" name="Glucose" required>
+            <label>Cholesterol:</label>
+            <input type="text" name="Cholesterol" required>
+            <label>Hemoglobin:</label>
+            <input type="text" name="Hemoglobin" required>
+            <label>Platelets:</label>
+            <input type="text" name="Platelets" required>
+            <label>White Blood Cells:</label>
+            <input type="text" name="White Blood Cells" required>
+            <label>BMI:</label>
+            <input type="text" name="BMI" required>
+            <label>Systolic Blood Pressure:</label>
+            <input type="text" name="Systolic Blood Pressure" required>
+            <label>Triglycerides:</label>
+            <input type="text" name="Triglycerides" required>
+            <label>LDL Cholesterol:</label>
+            <input type="text" name="LDL Cholesterol" required>
+            <label>Creatinine:</label>
+            <input type="text" name="Creatinine" required>
+            <label>C-reactive Protein:</label>
+            <input type="text" name="C-reactive Protein" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

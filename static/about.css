@@ -1,0 +1,105 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to bottom right, #4B0082, #FF6500);
+    color: #FFFFFF;
+    line-height: 1.6;
+    background-image:url('./images/back1.png'); /* Update the path if necessary */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #4B0082;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+}
+
+/* About Section */
+.about-section {
+    padding: 5px 2px;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(#FF6500, #EC8305);
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: 0;
+    margin-right: 0;
+    color: #FFF6E9;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin: 30px 0 20px;
+    color: #FFD700;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.about-section ul li {
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #4B0082;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}

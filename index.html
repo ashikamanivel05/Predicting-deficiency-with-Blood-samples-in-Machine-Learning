@@ -1,0 +1,298 @@
+/*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image:url('static/back1.png'); /* Update the path if necessary */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo img {
+            height: 50px; /* Set the logo height */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #4B0082;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4B0082;
+            color: white;
+        }
+
+        /* Main Content */
+        .background {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 10px; /* Reduced margin-bottom */
+        }
+
+        h3 {
+            color: azure;
+            padding-left: 0.5cm;
+            margin-top: 1px; /* Added margin-top to reduce the space between the Explore Report and Trending News */
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #FF6500;
+            margin-bottom: 10px;
+        }
+
+        .phrase {
+            font-size: 1.5rem;
+            color: #EC8305;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            line-height: 1.6;
+            color: #FFF6E9;
+        }
+
+        .explore-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .explore-button:hover {
+            background-color: #45a049;
+        }
+
+        /* News Section */
+        .news-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .news-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .news-item {
+            flex: 0 0 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .news-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            color: #EEF7FF;
+        }
+
+        .news-content img {
+            width: 8cm;
+            height: 4cm;
+            padding-left: 1.2cm;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .news-overlay {
+            flex: 2;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .news-overlay h3 {
+            font-size: 1.8rem;
+        }
+
+        .news-overlay p {
+            font-size: 1rem;
+            margin: 0;
+            padding-right: 1cm;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style> -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Example Image">
+
+        </div>
+        <ul>
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="../templates/about.html">About</a></li>
+            <li><a href="/templates/">Contact</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="background">
+        <h1 class="title">Difficiency prediction using Blood Samples</h1>
+        <h2 class="phrase">Predicting Multiple Diseases in One Go</h2>
+        <p class="description">
+            Our innovative tool allows you to predict potential health conditions based on symptoms. 
+            With accurate insights and comprehensive analyses, this tool empowers users to take early action 
+            and stay informed about their health.
+        </p>
+        <button class="explore-btn"onclick = "window.location.href='{{ url_for('login') }}'">Explore My Report</button>
+    <h3 style="color: azure; padding-left: 0.5cm; margin-top: 1px; text-align:left;">Trending News:</h3>
+    
+    <!-- News Section -->
+    <div class="news-container">
+        <div class="news-slides">
+            <div class="news-item">
+                <div class="news-content">
+                    <img src="{{ url_for('static', filename='images/news1.jpg') }}" alt="Example Image">
+                    <div class="news-overlay">
+                        <h3>Celebrations of 7th Naturopathy Day</h3>
+                        <p>The 7th Naturopathy Day was celebrated at the Central Research Institute of Yoga and Naturopathy (CRIYN), Nagamangala, under the aegis of the Central Council for Research in Yoga & Naturopathy (CCRYN), Ministry of Ayush. The event drew participation from over 800 doctors, undergraduate and postgraduate scholars from across India, representing states such as Andhra Pradesh, Tamil Nadu, Kerala, Maharashtra, Uttar Pradesh, Rajasthan, Gujarat, and Manipur.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-content">
+                    <img src="{{ url_for('static', filename='images/news2.png') }}" alt="News 2">
+                    <div class="news-overlay">
+                        <h3>The Impact of Glucagon on Diabetes Management</h3>
+                        <p>The islands or (more commonly) islets of Langerhans, first described by their namesake- Paul Langerhans- in 1969, are islands of mixed populations of endocrine cells that are scattered in the parenchyma of the pancreas. Islets of Langerhans have been much studied in the context of diabetes due to the hormones produced and secreted from the cells which form these micro-organs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-content">
+                    <img src="{{ url_for('static', filename='images/news3.png') }}" alt="Example Image">
+                    <div class="news-overlay">
+                        <h3>Research identifies the brain's 'locus coeruleus'</h3>
+                        <p>Researchers at the University of Lausanne have identified a novel role for the brain's 'locus coeruleus' in sleep and its disruptions. This brain region facilitates the transition between NREM and REM sleep states while maintaining an unconscious vigilance toward the external world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Buttons -->
+        <div class="carousel-buttons">
+            <button onclick="moveSlides(-1)">&#10094;</button>
+            <button onclick="moveSlides(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Multi-Disease Prediction. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function moveSlides(n) {
+            const slides = document.querySelectorAll('.news-item');
+            slideIndex += n;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            const slideWidth = slides[0].offsetWidth;
+            document.querySelector('.news-slides').style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        }
+
+        // Automatically move slides every 5 seconds
+        setInterval(() => {
+            moveSlides(1);
+        }, 5000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image:url('./images/back1.png'); /* Update the path if necessary */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+    background-image: url('logo.webp');
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #4B0082;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+}
+
+/* Main Content */
+.background {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 10px; /* Reduced margin-bottom */
+}
+
+h3 {
+    color: azure;
+    padding-left: 0.5cm;
+    margin-top: 1px; /* Added margin-top to reduce the space between the Explore Report and Trending News */
+}
+
+.title {
+    font-size: 3rem;
+    color: #FF6500;
+    margin-bottom: 10px;
+}
+
+.phrase {
+    font-size: 1.5rem;
+    color: #EC8305;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #FFF6E9;
+}
+
+.explore-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #45a049;
+}
+
+/* News Section */
+.news-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.news-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.news-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #EEF7FF;
+}
+
+.news-content img {
+    width: 8cm;
+    height: 4cm;
+    padding-left: 1.2cm;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.news-overlay {
+    flex: 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.news-overlay h3 {
+    font-size: 1.8rem;
+}
+
+.news-overlay p {
+    font-size: 1rem;
+    margin: 0;
+    padding-right: 1cm;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Footer */
+footer {
+    text-align: center;       /* Center-aligns the text */
+    padding: 10px;            /* Adds some space around the text */
+    background-color: rgba(255, 255, 255, 0.9);   /* Dark background for contrast */
+    color: black;              /* White text for readability */
+    font-size: 14px;          /* Adjusts the font size * /* Clean and modern font */
+    border-top: 2px solid #444; /* Optional: top border for separation */
+    position: fixed;          /* Keeps the footer fixed at the bottom */
+    bottom: 0;                /* Aligns the footer at the very bottom */
+    width: 100%; 
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
